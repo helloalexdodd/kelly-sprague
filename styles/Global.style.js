@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: inherit;
+    color: ${({ theme }) => theme.colors.secondary};
     text-decoration: underline;
     font-weight: ${({ theme }) => theme.fontWeights.bold};
   }

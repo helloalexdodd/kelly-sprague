@@ -42,9 +42,9 @@ const Nav = ({ open }) => {
           <Link href="/contact">
             <NavLink>Contact</NavLink>
           </Link>
-          <Link href="/products">
+          {/* <Link href="/products">
             <NavLink>Products</NavLink>
-          </Link>
+          </Link> */}
           <Link href="/wholesale">
             <NavLink>Wholesale</NavLink>
           </Link>

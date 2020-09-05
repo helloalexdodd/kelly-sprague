@@ -15,6 +15,7 @@ export const Container = styled.nav`
   min-height: 100vh;
   width: 28%;
   transition: all 0.3s ease-in-out;
+  z-index: 100;
 
   @media (max-width: ${theme.breakpoints[0]}) {
     width: 35%;
@@ -41,6 +42,7 @@ export const InnerContainer = styled.div`
 export const NavLink = styled.a`
   margin: 6px 0;
   padding: 4px;
+  color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.fontSizes[4]};
   text-decoration: none;
 `;

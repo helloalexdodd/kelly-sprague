@@ -8,8 +8,11 @@ export const Container = styled.div`
 export const InnerContainer = styled.section`
   background: ${({ theme }) => theme.colors.whiteTransparent};
   background-attachment: fixed;
-  margin-top: 70px;
   padding: 50px;
+
+  @media (max-width: ${theme.breakpoints[1]}) {
+    margin-top: 70px;
+  }
 
   @media (max-width: ${theme.breakpoints[2]}) {
     padding: 30px;
@@ -35,6 +38,7 @@ export const Main = styled.main`
     width: 65%;
   }
   @media (max-width: ${theme.breakpoints[1]}) {
+    align-items: flex-start;
     width: 100%;
   }
 
