@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import theme from '~/styles/theme';
 
 export const InnerContainer = styled.div`
   width: 100%;
@@ -16,6 +17,10 @@ export const Form = styled.form`
   flex-direction: column;
   margin: 50px auto;
   width: 80%;
+
+  @media (max-width: ${theme.breakpoints[2]}) {
+    width: 100%;
+  }
 
   input[type='text'],
   textarea {

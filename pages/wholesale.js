@@ -1,13 +1,8 @@
 import { useEffect } from 'react';
-import mailgo from 'mailgo';
 import Layout from '~/layouts';
 import { Text, H1, H2 } from '~/components/Typography';
 
 export default function Home() {
-  useEffect(() => {
-    mailgo();
-  }, []);
-
   return (
     <Layout>
       <H1>Wholesale</H1>

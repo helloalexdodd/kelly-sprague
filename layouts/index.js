@@ -1,15 +1,35 @@
-import Nav from '~/components/Nav';
-import { Container, InnerContainer, Main } from './Layout.style';
+import { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
+import { Container, InnerContainer, Main, I } from './Layout.style';
+import backgroundImage from '~/public/static/images/nathan-dumlao.jpg';
+
+const Nav = dynamic(() => import('../components/Nav'));
 
 const Layout = ({ children }) => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => setOpen(false);
+
+  useEffect(() => {
+    function downHandler({ key }) {
+      if (key === 'Escape') {
+        setOpen(false);
+      }
+    }
+    window.addEventListener('keydown', downHandler);
+    return () => window.removeEventListener('keydown', downHandler);
+  }, [open]);
+
   return (
-    <Container>
-      <Main
-        backgroundImage={require('~/public/static/images/nathan-dumlao.jpg')}
-      >
+    <Container onKeyDown={(e) => handleKeyDown(e)}>
+      <I className="fas fa-bars" onClick={handleOpen}></I>
+      <Main backgroundImage={backgroundImage} onClick={handleClose}>
         <InnerContainer>{children}</InnerContainer>
       </Main>
-      <Nav />
+      <Nav open={open} onClick={handleClose} />
     </Container>
   );
 };

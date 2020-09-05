@@ -20,8 +20,7 @@ export default function Home() {
         full plan we develop together, but they also work well alongside other
         protocols you may be following. Herbs are potent medicine, but fun
         medicine, too. I am offering low and no-cost formulas for BIPOC both
-        locally and elsewhere. Please email me directly at hello@kellysprague.ca
-        to access.{' '}
+        locally and elsewhere. Please email me directly at{' '}
         <a
           href="#mailgo"
           data-address="hello"
@@ -29,7 +28,8 @@ export default function Home() {
           data-subject="Hello! 🌿✨😃"
         >
           hello@kellysprague.ca
-        </a>
+        </a>{' '}
+        to access.
       </Text>
     </Layout>
   );

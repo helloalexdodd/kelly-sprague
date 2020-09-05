@@ -6,4 +6,6 @@ export const Text = styled.p`
   font-style: ${({ type }) => type || null};
   font-family: 'Palatino Linotype';
   line-height: 1.67;
+  color: ${({ theme, error }) =>
+    error ? theme.colors.secondaryDark : theme.colors.black};
 `;

@@ -2,7 +2,7 @@ const Joi = require('joi');
 
 const joiValidator = (req) => {
   schema = Joi.object({
-    name: Joi.string().required().label('Name'),
+    name: Joi.string().required(),
     email: Joi.string().required().email(),
     message: Joi.string().required(),
   });

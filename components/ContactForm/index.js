@@ -1,43 +1,62 @@
+import { useState, useReducer } from 'react';
 import axios from 'axios';
 import { Text } from '~/components/Typography';
 
 import { Form, InnerContainer, Button } from './ContactForm.style';
 
-const ContactForm = () => {
-  const [formReceived, setFormReceived] = React.useState(false);
+const initialState = {
+  name: '',
+  email: '',
+  message: '',
+};
 
-  const handleError = (err) => {
-    console.log(err);
+function reducer(state, { field, value }) {
+  return {
+    ...state,
+    [field]: value,
   };
+}
+
+const ContactForm = () => {
+  const [formReceived, setFormReceived] = useState(false);
+  const [formFeedback, setFormFeedback] = useState('');
+  const [error, setError] = useState(false);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleOnChange = (e) => {
-    const { value, classList } = e.target;
+    const { name, value, classList } = e.target;
     if (value.length) {
       classList.add('has-content');
     } else {
       classList.remove('has-content');
     }
+    dispatch({ field: name, value });
+  };
+
+  const { name, email, message } = state;
+
+  const handleError = (err) => {
+    setError(true);
+    setFormFeedback(err.message);
   };
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
     try {
       const res = await axios({
         method: 'POST',
         url: 'http://localhost:4000/api/contact',
         data: { name, email, message },
       });
-      console.log(res.data.msg);
+
       if (res.data.msg === 'success') {
-        document.getElementById('contact-form').reset();
-        setFormReceived('Submission Recieved!');
+        setError(false);
+        setFormReceived(true);
+        setFormFeedback('Submission Received!');
       }
     } catch (err) {
-      handleError(err);
+      console.log('err.response', err.response);
+      handleError(err?.response?.data.details[0]);
     }
   };
 
@@ -45,6 +64,7 @@ const ContactForm = () => {
     <Form method="POST" id="contact-form" onSubmit={handleOnSubmit}>
       <InnerContainer>
         <input
+          value={name}
           className="effect"
           type="text"
           id="name"
@@ -58,6 +78,7 @@ const ContactForm = () => {
       </InnerContainer>
       <InnerContainer>
         <input
+          value={email}
           className="effect"
           type="text"
           id="email"
@@ -71,6 +92,7 @@ const ContactForm = () => {
       </InnerContainer>
       <InnerContainer>
         <textarea
+          value={message}
           className="effect"
           id="message"
           name="message"
@@ -82,8 +104,8 @@ const ContactForm = () => {
         <span className="focus-border"></span>
       </InnerContainer>
       <InnerContainer>
-        {formReceived && <Text>{formReceived}</Text>}
-        <Button type="submit" disabled={formReceived}>
+        <Text error={error}>{formFeedback && formFeedback}</Text>
+        <Button type="submit" disabled={!!formReceived}>
           Submit
         </Button>
       </InnerContainer>

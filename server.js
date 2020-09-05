@@ -18,7 +18,7 @@ app.prepare().then(() => {
     return handle(req, res);
   });
 
-  server.post('/api/contact', joiValidator(validate), (req, res) => {
+  server.post('/api/contact', validate(joiValidator), (req, res) => {
     const { name, email, message } = req.body;
 
     const mail = {
@@ -39,6 +39,6 @@ app.prepare().then(() => {
 
   server.listen(PORT, (err) => {
     if (err) throw err;
-    console.log(`> App listening on http://localhost:${PORT}...`);
+    console.log(`> App listening on port ${PORT}...`);
   });
 });

@@ -8,7 +8,12 @@ export const Container = styled.div`
 export const InnerContainer = styled.section`
   background: ${({ theme }) => theme.colors.whiteTransparent};
   background-attachment: fixed;
+  margin-top: 70px;
   padding: 50px;
+
+  @media (max-width: ${theme.breakpoints[2]}) {
+    padding: 30px;
+  }
 `;
 
 export const Main = styled.main`
@@ -19,13 +24,30 @@ export const Main = styled.main`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0 30%;
-  background-size: calc(100% - 450px);
+  background-size: calc(72%);
   background-attachment: fixed;
   min-height: 100vh;
-  width: calc(100% - 475px);
+  width: 72%;
   padding: 5%;
 
   @media (max-width: ${theme.breakpoints[0]}) {
     background-size: cover;
+    width: 65%;
   }
+  @media (max-width: ${theme.breakpoints[1]}) {
+    width: 100%;
+  }
+
+  @media (max-width: ${theme.breakpoints[2]}) {
+    padding: 0;
+  }
+`;
+
+export const I = styled.i`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: ${theme.fontSizes[6]};
+  color: ${theme.colors.white};
+  cursor: pointer;
 `;
