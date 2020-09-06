@@ -59,7 +59,7 @@ const ContactForm = () => {
   };
 
   return (
-    <Form method="POST" id="contact-form" onSubmit={handleOnSubmit}>
+    <Form method="POST" onSubmit={handleOnSubmit}>
       <InnerContainer>
         <input
           value={name}

@@ -11,6 +11,7 @@ const mailer = require('./mailer');
 app.prepare().then(() => {
   const server = express();
   server.use(express.json());
+
   server.post('/api/contact', validate(joiValidator), (req, res) => {
     const { name, email, message } = req.body;
 
