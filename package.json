@@ -6,7 +6,6 @@
     "dev": "nodemon server.js",
     "build": "next build",
     "start": "next start",
-    "postbuild": "next-on-netlify",
     "lint": "eslint ./components/** ./pages/** -c .eslintrc.js --ext js",
     "lint-fix": "eslint ./components/** ./pages/** -c .eslintrc.js --fix --ext js"
   },
