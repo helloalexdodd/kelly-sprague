@@ -1,8 +1,10 @@
 import { useState, useReducer } from 'react';
 import axios from 'axios';
+import config from 'config';
 import { Text } from '~/components/Typography';
-
 import { Form, InnerContainer, Button } from './ContactForm.style';
+
+const url = config.get('url') || 'http://localhost:4000';
 
 const initialState = {
   name: '',
@@ -45,7 +47,7 @@ const ContactForm = () => {
     try {
       const res = await axios({
         method: 'POST',
-        url: 'http://localhost:4000/api/contact',
+        url: `${url}/api/contact`,
         data: { name, email, message },
       });
 
