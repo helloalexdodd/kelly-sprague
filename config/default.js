@@ -1,6 +1,7 @@
 module.exports = {
+  PORT: 8080,
   email: {
-    username: 'hello@kellysprague.ca',
-    password: 'z#o!y3#&9%QrDkpge5GB',
+    username: '',
+    password: '',
   },
 };
