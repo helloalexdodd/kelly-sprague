@@ -24,7 +24,7 @@ export const Form = styled.form`
 
   input[type='text'],
   textarea {
-    font-family: 'Palatino Linotype';
+    font-family: 'Merriweather';
     color: #000;
     width: 100%;
     padding: 10px 0;
@@ -72,7 +72,7 @@ export const Form = styled.form`
     color: #000;
     transition: 0.3s;
     letter-spacing: 0.5px;
-    font-family: 'Palatino Linotype';
+    font-family: 'Merriweather';
   }
 
   .effect:focus ~ label,

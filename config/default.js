@@ -1,5 +1,5 @@
 module.exports = {
   PORT: 8080,
-  username: '',
-  password: '',
+  username: 'hello@alexdodd.ca',
+  password: '3LEo@DY7!B&R27',
 };

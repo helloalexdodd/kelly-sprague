@@ -1,14 +1,15 @@
 import { StrictMode } from 'react';
-import dynamic from 'next/dynamic';
 import mailgo from 'mailgo';
 import App from 'next/app';
-import { ThemeProvider } from 'styled-components';
-import GlobalStyle, { WebfontLoaderConfig } from '../styles/Global.style';
-import theme from '../styles/theme';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import GlobalStyle from '~/styles/Global.style';
+import theme from '~/styles/theme';
+import fonts from '~/styles/fonts';
 
-const WebfontLoader = dynamic(() => import('@dr-kobros/react-webfont-loader'), {
-  ssr: false,
-});
+const GlobalStyles = createGlobalStyle`
+  ${GlobalStyle}
+  ${fonts}
+`;
 
 export default class MyApp extends App {
   componentDidMount() {
@@ -19,10 +20,8 @@ export default class MyApp extends App {
     return (
       <StrictMode>
         <ThemeProvider theme={theme}>
-          <GlobalStyle />
-          <WebfontLoader config={WebfontLoaderConfig}>
-            <Component {...pageProps} />
-          </WebfontLoader>
+          <GlobalStyles />
+          <Component {...pageProps} />
         </ThemeProvider>
       </StrictMode>
     );
