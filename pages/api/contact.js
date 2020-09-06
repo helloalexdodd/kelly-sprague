@@ -1,5 +1,5 @@
-const { joiValidator } = require('./formValidation');
-const mailer = require('./mailer');
+const { joiValidator } = require('../../formValidation');
+const mailer = require('../../mailer');
 
 export default (req, res) => {
   if (req.method === 'POST') {
