@@ -54,7 +54,6 @@ const ContactForm = () => {
         setFormFeedback('Submission Received!');
       }
     } catch (err) {
-      console.log('err.response', err.response);
       handleError(err?.response?.data.details[0]);
     }
   };

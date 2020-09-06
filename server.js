@@ -8,8 +8,6 @@ const PORT = process.env.PORT || 4000;
 const { joiValidator, validate } = require('./formValidation');
 const mailer = require('./mailer');
 
-const user = process.env.username;
-
 app.prepare().then(() => {
   const server = express();
   server.use(express.json());
@@ -18,11 +16,9 @@ app.prepare().then(() => {
 
     mailer({ email, name, text: message })
       .then(() => {
-        console.log('success');
-        res.send('success');
+        res.send({ msg: 'success' });
       })
       .catch((err) => {
-        console.log('failed', err);
         res.send(err);
       });
   });
