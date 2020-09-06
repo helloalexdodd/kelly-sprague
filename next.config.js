@@ -1,7 +1,6 @@
 const withImages = require('next-images');
 
 module.exports = {
-  target: 'serverless',
   ...withImages({
     webpack: (config, { isServer }) => {
       // Fixes npm packages that depend on `fs` module
