@@ -3,8 +3,6 @@ import axios from 'axios';
 import { Text } from '~/components/Typography';
 import { Form, InnerContainer, Button } from './ContactForm.style';
 
-const url = process.env.url;
-
 const initialState = {
   name: '',
   email: '',

@@ -1,39 +1,34 @@
 const express = require('express');
 const next = require('next');
-const transporter = require('./transporter');
-const { joiValidator, validate } = require('./formValidation');
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 const PORT = process.env.PORT || 4000;
+
+const { joiValidator, validate } = require('./formValidation');
+const mailer = require('./mailer');
 
 const user = process.env.username;
 
 app.prepare().then(() => {
   const server = express();
   server.use(express.json());
-
-  server.get('*', (req, res) => {
-    return handle(req, res);
-  });
-
   server.post('/api/contact', validate(joiValidator), (req, res) => {
     const { name, email, message } = req.body;
 
-    const mail = {
-      from: email,
-      to: user,
-      subject: `New Message from ${name}`,
-      text: message,
-    };
+    mailer({ email, name, text: message })
+      .then(() => {
+        console.log('success');
+        res.send('success');
+      })
+      .catch((err) => {
+        console.log('failed', err);
+        res.send(err);
+      });
+  });
 
-    transporter.sendMail(mail, (err) => {
-      if (err) {
-        res.status(400).send({ msg: 'fail' });
-      } else {
-        res.send({ msg: 'success' });
-      }
-    });
+  server.get('*', (req, res) => {
+    return handle(req, res);
   });
 
   server.listen(PORT, (err) => {
