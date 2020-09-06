@@ -9,6 +9,21 @@ app.prepare().then(() => {
   const server = express();
   server.use(express.json());
 
+  server.post('api/contact', (req, res) => {
+    const { error } = joiValidator(req.body);
+    if (error) return res.status(404).send(error.details[0].message);
+
+    const { name, email, message } = req.body;
+
+    mailer({ email, name, text: message })
+      .then(() => {
+        res.send({ msg: 'success' });
+      })
+      .catch((err) => {
+        res.send(err);
+      });
+  });
+
   server.get('*', (req, res) => {
     return handle(req, res);
   });
