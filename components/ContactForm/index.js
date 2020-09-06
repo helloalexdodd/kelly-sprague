@@ -4,7 +4,7 @@ import config from 'config';
 import { Text } from '~/components/Typography';
 import { Form, InnerContainer, Button } from './ContactForm.style';
 
-const url = config.get('url') || 'http://localhost:4000';
+const url = config.get('url');
 
 const initialState = {
   name: '',
