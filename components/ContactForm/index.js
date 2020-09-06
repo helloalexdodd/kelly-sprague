@@ -59,7 +59,8 @@ const ContactForm = () => {
   };
 
   return (
-    <Form method="POST" onSubmit={handleOnSubmit}>
+    <Form method="POST" onSubmit={handleOnSubmit} name="contact">
+      <input type="hidden" name="contact" value="contact" />
       <InnerContainer>
         <input
           value={name}
