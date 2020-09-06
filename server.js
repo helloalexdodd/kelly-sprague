@@ -5,14 +5,14 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 const PORT = process.env.PORT || 4000;
 
+const { joiValidator, validate } = require('./formValidation.js');
+const mailer = require('./mailer');
+
 app.prepare().then(() => {
   const server = express();
   server.use(express.json());
 
-  server.post('api/contact', (req, res) => {
-    const { error } = joiValidator(req.body);
-    if (error) return res.status(404).send(error.details[0].message);
-
+  server.post('/api/contact', validate(joiValidator), (req, res) => {
     const { name, email, message } = req.body;
 
     mailer({ email, name, text: message })
