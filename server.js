@@ -8,7 +8,7 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 const PORT = process.env.PORT || 4000;
 
-const user = config.get('email.username');
+const user = config.get('username');
 
 app.prepare().then(() => {
   const server = express();

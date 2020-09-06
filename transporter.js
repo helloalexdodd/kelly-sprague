@@ -1,8 +1,8 @@
 const nodemailer = require('nodemailer');
 const config = require('config');
 
-const user = config.get('email.username');
-const pass = config.get('email.password');
+const user = config.get('username');
+const pass = config.get('password');
 
 const transport = {
   host: 'mail.hover.com',
