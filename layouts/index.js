@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
   }, [open]);
 
   return (
-    <Container onKeyDown={(e) => handleKeyDown(e)}>
+    <Container>
       <I className="fas fa-bars" onClick={handleOpen}></I>
       <Main backgroundImage={backgroundImage} onClick={handleClose}>
         <InnerContainer>{children}</InnerContainer>
