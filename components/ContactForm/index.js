@@ -46,7 +46,7 @@ const ContactForm = () => {
     try {
       const res = await axios({
         method: 'POST',
-        url: `${url}/api/contact`,
+        url: `/api/contact`,
         data: { name, email, message },
       });
 
