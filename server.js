@@ -1,14 +1,13 @@
 const express = require('express');
 const next = require('next');
 const transporter = require('./transporter');
-const config = require('config');
 const { joiValidator, validate } = require('./formValidation');
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 const PORT = process.env.PORT || 4000;
 
-const user = config.get('username');
+const user = process.env.username;
 
 app.prepare().then(() => {
   const server = express();

@@ -1,10 +1,9 @@
 import { useState, useReducer } from 'react';
 import axios from 'axios';
-import config from 'config';
 import { Text } from '~/components/Typography';
 import { Form, InnerContainer, Button } from './ContactForm.style';
 
-const url = config.get('url');
+const url = process.env.url;
 
 const initialState = {
   name: '',
