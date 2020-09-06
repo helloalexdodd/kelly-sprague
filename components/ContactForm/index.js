@@ -51,7 +51,7 @@ const ContactForm = () => {
       if (res.data.msg === 'success') {
         setError(false);
         setFormReceived(true);
-        setFormFeedback('Submission Received!');
+        setFormFeedback('Submission Received! Thank-you so much!');
       }
     } catch (err) {
       handleError(err?.response?.data.details[0]);
