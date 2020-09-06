@@ -7,4 +7,13 @@ module.exports = {
       return config;
     },
   }),
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.node = {
+        fs: 'empty',
+      };
+    }
+
+    return config;
+  },
 };
