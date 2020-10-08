@@ -1,0 +1,5 @@
+layouts/* linguist-language=React
+components/*.js linguist-language=React
+lib/* linguist-language=React
+pages/* linguist-language=React
+*.style.js linguist-language=CSS
