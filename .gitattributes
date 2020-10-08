@@ -2,4 +2,4 @@ layouts/* linguist-language=JSX
 components/*.js linguist-language=JSX
 lib/* linguist-language=JSX
 pages/* linguist-language=JSX
-*.style.js linguist-language=CSS
+*.style.js linguist-language=SCSS
