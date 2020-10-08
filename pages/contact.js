@@ -6,12 +6,12 @@ export default function Home() {
   return (
     <Layout>
       <H1>Contact</H1>
-      <Text type="bold">
-        I WOULD LOVE TO HEAR FROM YOU. Whether you have questions about
-        consultations, formulas, accessing low or no cost resources, or just
-        want to chat about herbs - please reach out! I also provide workshops
-        and in-house consultations to companies looking to take care of their
-        employees.
+      <Text type="bold">I WOULD LOVE TO HEAR FROM YOU.</Text>
+      <Text>
+        Whether you have questions about consultations, formulas, accessing low
+        or no cost resources, or just want to chat about herbs - please reach
+        out! I also provide workshops and in-house consultations to companies
+        looking to take care of their employees.
       </Text>
       <Text>
         email: 
@@ -34,7 +34,7 @@ export default function Home() {
           @heldherbals
         </a>
       </Text>
-      <ContactForm />
+      {/* <ContactForm /> */}
     </Layout>
   );
 }

@@ -10,8 +10,10 @@ export default function Home() {
         If you are a naturopath or healthcare professional looking for organic,
         high quality tinctures, I provide bulk single herb tinctures, bulk
         tincture blends, and custom tincture blends directly for patients. I
-        also provide custom loose leaf tea blends and flower essences. Please
-        contact me at{' '}
+        also provide custom loose leaf tea blends and flower essences.
+      </Text>
+      <Text>
+        Please contact me at{' '}
         <a
           href="#mailgo"
           data-address="hello"
@@ -20,9 +22,11 @@ export default function Home() {
         >
           hello@kellysprague.ca
         </a>{' '}
-        for more info about pricing, availability, and process! If you’re
-        interested in carrying any products in your online or brick and mortar,
-        I’d love to hear from you! Please contact me at{' '}
+        for more info about pricing, availability, and process.
+      </Text>
+      <Text>
+        If you’re interested in carrying any products in your online or brick
+        and mortar, I’d love to hear from you! Please contact me at{' '}
         <a
           href="#mailgo"
           data-address="hello"
