@@ -33,7 +33,7 @@ export default function Home() {
           @heldherbals
         </a>
       </Text>
-      {/* <ContactForm /> */}
+      <ContactForm />
     </>
   );
 }

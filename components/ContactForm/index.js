@@ -42,13 +42,13 @@ const ContactForm = () => {
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios({
+      const { data } = await axios({
         method: 'POST',
-        url: `/api/contact`,
+        url: `https://kelly-form-server.herokuapp.com/api/contact`,
         data: { name, email, message },
       });
 
-      if (res.data.msg === 'success') {
+      if (data.msg === 'success') {
         setError(false);
         setFormReceived(true);
         setFormFeedback('Submission Received! Thank-you so much!');
