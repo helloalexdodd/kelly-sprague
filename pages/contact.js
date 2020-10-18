@@ -1,10 +1,9 @@
-import Layout from '~/layouts';
 import { Text, H1, H2 } from '~/components/Typography';
 import ContactForm from '~/components/ContactForm';
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       <H1>Contact</H1>
       <Text type="bold">I WOULD LOVE TO HEAR FROM YOU.</Text>
       <Text>
@@ -35,6 +34,6 @@ export default function Home() {
         </a>
       </Text>
       {/* <ContactForm /> */}
-    </Layout>
+    </>
   );
 }

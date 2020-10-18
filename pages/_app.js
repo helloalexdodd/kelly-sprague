@@ -5,6 +5,9 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import GlobalStyle from '~/styles/Global.style';
 import theme from '~/styles/theme';
 import fonts from '~/styles/fonts.style';
+import Layout from '~/layouts';
+import Context from '~/context/context';
+import Provider from '~/context/provider';
 
 const GlobalStyles = createGlobalStyle`
   ${GlobalStyle}
@@ -21,7 +24,15 @@ export default class MyApp extends App {
       <StrictMode>
         <ThemeProvider theme={theme}>
           <GlobalStyles />
-          <Component {...pageProps} />
+          <Provider>
+            <Context.Consumer>
+              {(context) => (
+                <Layout>
+                  <Component context={context} {...pageProps} />
+                </Layout>
+              )}
+            </Context.Consumer>
+          </Provider>
         </ThemeProvider>
       </StrictMode>
     );

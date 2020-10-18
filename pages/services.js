@@ -3,7 +3,7 @@ import { Text, H1, H2 } from '~/components/Typography';
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       <Text type="bold">
         Herbs can be used to support the body and address concerns including but
         not limited to:
@@ -75,6 +75,6 @@ export default function Home() {
       <Text>
         I handmake all formulas using organic herbs whenever possible.
       </Text>
-    </Layout>
+    </>
   );
 }

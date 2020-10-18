@@ -13,7 +13,7 @@ function debounce(fn, ms) {
   };
 }
 
-const Nav = ({ open }) => {
+const Nav = ({ open, handleClose }) => {
   const [height, setHeight] = useState('200px');
 
   useEffect(() => {
@@ -34,19 +34,19 @@ const Nav = ({ open }) => {
       <Container open={open}>
         <InnerContainer id="innerContainer" height={`${height}px`}>
           <Link href="/services">
-            <NavLink>Services</NavLink>
+            <NavLink onClick={handleClose}>Services</NavLink>
           </Link>
-          <Link href="/about">
-            <NavLink>About</NavLink>
+          <Link href="/">
+            <NavLink onClick={handleClose}>About</NavLink>
           </Link>
           <Link href="/contact">
-            <NavLink>Contact</NavLink>
+            <NavLink onClick={handleClose}>Contact</NavLink>
           </Link>
           {/* <Link href="/products">
             <NavLink>Products</NavLink>
           </Link> */}
           <Link href="/wholesale">
-            <NavLink>Wholesale</NavLink>
+            <NavLink onClick={handleClose}>Wholesale</NavLink>
           </Link>
         </InnerContainer>
       </Container>

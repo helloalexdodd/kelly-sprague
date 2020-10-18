@@ -3,7 +3,7 @@ import { Text, H2 } from '~/components/Typography';
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       <Text type="bold">
         Drawing on over a decade of personal and professional work with bodies,
         nutrition, and plants, I (she/her) work with clients to develop unique
@@ -30,6 +30,6 @@ export default function Home() {
         issues, I focus on you as an individual and how each herb acts in
         relationship to your specific constitution.
       </Text>
-    </Layout>
+    </>
   );
 }

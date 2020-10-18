@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import theme from '../styles/theme';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const Container = styled.div`
   display: flex;
@@ -47,7 +48,7 @@ export const Main = styled.main`
   }
 `;
 
-export const I = styled.i`
+export const I = styled(FontAwesomeIcon)`
   position: absolute;
   top: 20px;
   right: 20px;

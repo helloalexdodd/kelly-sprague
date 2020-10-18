@@ -4,7 +4,7 @@ import { Text, H1 } from '~/components/Typography';
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       <H1>Wholesale</H1>
       <Text type="bold">
         If you are a naturopath or healthcare professional looking for organic,
@@ -37,6 +37,6 @@ export default function Home() {
         </a>{' '}
         and I’ll send over a line sheet.
       </Text>
-    </Layout>
+    </>
   );
 }
