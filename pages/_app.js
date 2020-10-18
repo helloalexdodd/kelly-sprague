@@ -18,6 +18,7 @@ export default class MyApp extends App {
   componentDidMount() {
     mailgo();
   }
+
   render() {
     const { Component, pageProps } = this.props;
     return (
