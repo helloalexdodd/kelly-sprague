@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-import Layout from '~/layouts';
 import { Text, H1 } from '~/components/Typography';
 
 export default function Home() {

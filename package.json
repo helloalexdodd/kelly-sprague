@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon server.js",
-    "build": "next build && next export",
-    "start": "NODE_ENV=production node server.js",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint ./components/** ./pages/** -c .eslintrc.js --ext js",
     "lint-fix": "eslint ./components/** ./pages/** -c .eslintrc.js --fix --ext js"
   },
@@ -24,7 +24,6 @@
     "mailgo": "^0.9.14",
     "next": "9.5.2",
     "next-images": "^1.4.1",
-    "next-seo": "^4.7.3",
     "nextjs-sitemap-generator": "^1.1.1",
     "nodemailer": "^6.4.11",
     "prop-types": "^15.7.2",

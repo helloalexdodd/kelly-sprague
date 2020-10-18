@@ -1,4 +1,3 @@
-import Layout from '~/layouts';
 import { Text, H2 } from '~/components/Typography';
 
 export default function Home() {

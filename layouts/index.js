@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import dynamic from 'next/dynamic';
 import { Container, InnerContainer, Main, I } from './Layout.style';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
