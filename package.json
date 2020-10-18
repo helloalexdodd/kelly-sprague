@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "nodemon server.js",
     "build": "next build && next export",
-    "postbuild": "next-on-netlify",
     "start": "NODE_ENV=production node server.js",
     "lint": "eslint ./components/** ./pages/** -c .eslintrc.js --ext js",
     "lint-fix": "eslint ./components/** ./pages/** -c .eslintrc.js --fix --ext js"
@@ -25,7 +24,6 @@
     "mailgo": "^0.9.14",
     "next": "9.5.2",
     "next-images": "^1.4.1",
-    "next-on-netlify": "^2.5.1",
     "next-seo": "^4.7.3",
     "nextjs-sitemap-generator": "^1.1.1",
     "nodemailer": "^6.4.11",

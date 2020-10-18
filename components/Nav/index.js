@@ -27,8 +27,6 @@ const Nav = ({ open, handleClose }) => {
     return () => window.removeEventListener('resize', debouncedHandleResize);
   }, [open]);
 
-  useEffect(() => {}, []);
-
   return (
     <>
       <Container open={open}>
