@@ -4,7 +4,7 @@ import App from 'next/app';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import GlobalStyle from '~/styles/Global.style';
 import theme from '~/styles/theme';
-import fonts from '~/styles/fonts';
+import fonts from '~/styles/fonts.style';
 
 const GlobalStyles = createGlobalStyle`
   ${GlobalStyle}
